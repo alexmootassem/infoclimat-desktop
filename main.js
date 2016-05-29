@@ -11,8 +11,10 @@ app.on('ready', () => {
     mainWindow.on('closed', () => mainWindow = null)
     const page = mainWindow.webContents
     page.on('dom-ready', () => {
+        mainWindow.setTitle("InfoClimat - Desktop")
         page.insertCSS(fs.readFileSync(path.join(__dirname, 'style.css'), 'utf8'))
         page.executeJavaScript(`
+            window.dispatchEvent(new Event('resize'));
             let ipcRenderer = require('electron').ipcRenderer,
                 _c = document.getElementById('accueil-cartedynamique-container'),
                 _n = [_c, ...(_c.getElementsByTagName('*')), ...(document.body.getElementsByTagName('script'))],
@@ -24,7 +26,7 @@ app.on('ready', () => {
                     resolve();
                 });
             })
-            Promise.all(_reqs).then(() => ipcRenderer.send('renderer-ready'));
+            Promise.all(_reqs).then(() => setTimeout(() => ipcRenderer.send('renderer-ready'), 1000));
         `)
     })
 })
