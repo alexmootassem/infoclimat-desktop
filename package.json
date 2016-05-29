@@ -1,0 +1,19 @@
+{
+  "name": "infoclimat",
+  "version": "1.0.0",
+  "description": "unofficial InfoClimat desktop app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "keywords": [
+    "Electron",
+    "infoclimat",
+    "weather",
+    "meteo"
+  ],
+  "author": "Alexandre MOOTASSEM",
+  "devDependencies": {
+    "electron-prebuilt": "^1.2.0"
+  }
+}

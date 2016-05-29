@@ -1,0 +1,13 @@
+body { background: none !important; }
+#fullscreen-button { display: none !important; }
+#accueil-carte-gauche { width: 100% !important; }
+#corps {
+    width: initial !important;
+    padding: 0 !important;
+    min-width: initial !important;
+    min-height: initial !important;
+}
+#accueil-cartedynamique-container {
+    position: fixed !important;
+    height: 100% !important;
+}
